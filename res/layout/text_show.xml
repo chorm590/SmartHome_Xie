@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+    
+    <ImageView 
+        android:id="@+id/ivBg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/action_settings"/>
+    
+    <RelativeLayout 
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        
+        <TextView 
+        android:id="@+id/tvMainInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/num"
+        android:textSize="40sp"/>
+    
+    <TextView 
+        android:id="@+id/tvUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unit"
+        android:layout_alignTop="@id/tvMainInfo"
+        android:layout_toRightOf="@id/tvMainInfo"
+        android:layout_toEndOf="@id/tvMainInfo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="start"
+        android:textSize="17sp"/>
+    
+    <TextView 
+        android:id="@+id/tvTitleInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMainInfo"
+        android:text="@string/action_settings"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"/>
+        
+    </RelativeLayout>
+    
+</RelativeLayout>
