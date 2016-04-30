@@ -26,7 +26,7 @@
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
 	        android:textSize="27sp"
-	        android:text="@string/app_name"/>
+	        android:text="@string/main_title"/>
         
         <TextView 
 	        android:id="@+id/tvSubTitle"
@@ -36,7 +36,7 @@
 	        android:textSize="13sp"
 	        android:paddingBottom="3dp"
 	        android:textColor="@android:color/darker_gray"
-	        android:text="@string/app_name"/>
+	        android:text="@string/sub_title"/>
         
     </LinearLayout>
     
@@ -45,7 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="3dp"
-        android:visibility="invisible"
+        android:onClick="setIp"
+        android:src="@drawable/ic_launcher"
         android:contentDescription="@string/action_settings"
         android:layout_weight="5"/>
 

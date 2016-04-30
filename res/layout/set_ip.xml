@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+    <TableRow 
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IP地址："/>
+        
+        <EditText 
+        android:id="@+id/etSettingIP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+        
+    </TableRow>
+    
+    
+    <TableRow 
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="端口："/>
+        
+        <EditText 
+        android:id="@+id/etSettingPort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="17173"/>
+        
+    </TableRow>
+    
+
+</LinearLayout>

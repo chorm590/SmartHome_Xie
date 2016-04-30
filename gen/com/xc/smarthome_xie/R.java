@@ -10,6 +10,9 @@ package com.xc.smarthome_xie;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int bg_holo_grey=0x7f040000;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -18,47 +21,99 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int splash_bg=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000a;
-        public static final int gvMain=0x7f080000;
-        public static final int ivBg=0x7f080002;
-        public static final int ivLeft=0x7f080006;
-        public static final int ivRight=0x7f080009;
-        public static final int ivSplash=0x7f080001;
-        public static final int tvMainInfo=0x7f080003;
-        public static final int tvSubTitle=0x7f080008;
-        public static final int tvTitle=0x7f080007;
-        public static final int tvTitleInfo=0x7f080005;
-        public static final int tvUnit=0x7f080004;
+        public static final int action_settings=0x7f090022;
+        public static final int cbDelaySwitch=0x7f090009;
+        public static final int cbRepeat=0x7f090007;
+        public static final int cbSetTimeSwitch=0x7f090002;
+        public static final int etSettingIP=0x7f090018;
+        public static final int etSettingPort=0x7f090019;
+        public static final int gvMain=0x7f090014;
+        public static final int iv=0x7f090016;
+        public static final int ivBg=0x7f09001a;
+        public static final int ivLeft=0x7f09001e;
+        public static final int ivRight=0x7f090021;
+        public static final int ivSplash=0x7f090015;
+        public static final int leftDayInfo=0x7f09000b;
+        public static final int leftHourInfo=0x7f09000d;
+        public static final int leftMinInfo=0x7f09000f;
+        public static final int leftdown=0x7f090005;
+        public static final int leftup=0x7f090003;
+        public static final int leftup2=0x7f09000a;
+        public static final int npDay=0x7f09000c;
+        public static final int npHour=0x7f09000e;
+        public static final int npMin=0x7f090010;
+        public static final int tb=0x7f090000;
+        public static final int tv=0x7f090017;
+        public static final int tvDelayTime=0x7f090008;
+        public static final int tvEndTime=0x7f090006;
+        public static final int tvMainInfo=0x7f09001b;
+        public static final int tvSetTime=0x7f090001;
+        public static final int tvStartTime=0x7f090004;
+        public static final int tvSubInfo=0x7f09001d;
+        public static final int tvSubTitle=0x7f090020;
+        public static final int tvTitle=0x7f09001f;
+        public static final int tvUnit=0x7f09001c;
+        public static final int viewCenter=0x7f090012;
+        public static final int viewLeft=0x7f090011;
+        public static final int viewRight=0x7f090013;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
-        public static final int activity_splah=0x7f030001;
-        public static final int text_show=0x7f030002;
-        public static final int titlebar=0x7f030003;
+        public static final int activity_control=0x7f030000;
+        public static final int activity_main=0x7f030001;
+        public static final int activity_splah=0x7f030002;
+        public static final int function_layout=0x7f030003;
+        public static final int set_ip=0x7f030004;
+        public static final int set_time_layout=0x7f030005;
+        public static final int text_show=0x7f030006;
+        public static final int titlebar=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
-        public static final int splah=0x7f070001;
+        public static final int control=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int splah=0x7f080002;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
-        public static final int num=0x7f050004;
-        public static final int title_activity_splah=0x7f050003;
-        public static final int unit=0x7f050005;
+        public static final int action_settings=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060001;
+        public static final int hour=0x7f06001b;
+        public static final int main_title=0x7f06000c;
+        public static final int min=0x7f06001c;
+        public static final int nosie=0x7f060008;
+        public static final int nosie_uint=0x7f06000b;
+        public static final int num=0x7f060004;
+        public static final int num_00=0x7f060013;
+        public static final int pm2_5=0x7f060007;
+        public static final int pm2_5_unit=0x7f06000a;
+        public static final int repeat=0x7f06001a;
+        public static final int sub_title=0x7f06000d;
+        public static final int tempreture=0x7f060006;
+        public static final int tempreture_unit=0x7f060009;
+        public static final int time_00_00=0x7f060012;
+        public static final int time_23_59=0x7f060014;
+        public static final int title_activity_control=0x7f06000e;
+        public static final int title_activity_splah=0x7f060003;
+        public static final int turn_off=0x7f060019;
+        public static final int turn_on=0x7f060018;
+        public static final int txt_day=0x7f060015;
+        public static final int txt_delay_time=0x7f060010;
+        public static final int txt_hour=0x7f060016;
+        public static final int txt_left_time=0x7f060011;
+        public static final int txt_min=0x7f060017;
+        public static final int txt_set_time=0x7f06000f;
+        public static final int unit=0x7f060005;
     }
     public static final class style {
-        public static final int AppBaseTheme=0x7f060000;
-        public static final int AppThemeFullScreen=0x7f060001;
-        public static final int AppThemeNoTitle=0x7f060002;
+        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppThemeFullScreen=0x7f070001;
+        public static final int AppThemeNoTitle=0x7f070002;
     }
 }
