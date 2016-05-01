@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg_holo_grey">#ffFFF0F5</color>
+    <color name="bg_holo_grey">#ffe7e7e7</color>
+    <color name="bg_holo_grey_txt">#fff3f3f3</color>
 </resources>

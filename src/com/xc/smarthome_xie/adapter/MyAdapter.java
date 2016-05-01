@@ -36,8 +36,7 @@ public class MyAdapter extends ArrayAdapter<Entity> {
 		}
 		
 		holder.tv.setText(getItem(position).getName());
-//		holder.iv.setImageResource(getItem(position).getRes());
-		holder.iv.setBackgroundColor(getItem(position).getRes());
+		holder.iv.setImageResource(getItem(position).getRes());
 		
 		return convertView;
 	}

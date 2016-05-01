@@ -18,8 +18,8 @@ public class ServerInfo {
 	private ServerInfo(){
 		Log.d(TAG, "Instancing...");
 		info = new ServerInfoEntity();
-		info.setIp("192.168.0.1");
-		info.setPort(17173);
+		info.setIp("192.168.11.254");
+		info.setPort(8080);
 	}
 	
 	public String getIPAddress(){

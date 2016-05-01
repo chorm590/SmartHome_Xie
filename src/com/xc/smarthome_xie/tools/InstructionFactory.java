@@ -6,6 +6,7 @@ import android.util.Log;
 
 public class InstructionFactory {
 	
+	public static int which;
 	public static boolean isSwitchOn ;
 	public static boolean isSetTimeOn ;
 	public static String setTimeStartAfterMins ;
@@ -15,7 +16,7 @@ public class InstructionFactory {
 	public static int delayAfterMins ;
 	
 	public static String getSettingInstruction(){
-		String vitamin = "";
+		String vitamin = String.valueOf(which);
 		vitamin += (isSwitchOn?1:0); // The switch.
 		vitamin += (isSetTimeOn?"1"+getTime():"0"+"00000000"); // set time mission.
 		vitamin += (isSetTimeRepeat?"1":"0"); // is repeat.

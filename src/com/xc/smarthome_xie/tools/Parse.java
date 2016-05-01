@@ -15,18 +15,15 @@ public class Parse {
 	public static void parse(String string) {
 		Log.d(TAG, "string="+string);
 		String[] split = string.split(";");
-		/*
-		 
-		  数据示例：
-		  					23;0.79;68;
-		  					温度；PM2.5；湿度；
-		  
-		 * */
 		WatcherEntity entity = new WatcherEntity(split[0],split[1],split[2]);
 		Intent intent = new Intent();
 		intent.putExtra("entity", entity);
 		intent.setAction(MainActivity.BROADCAST_ACTION);
-		MainActivity.getInstance().sendBroadcast(intent);
+		try{
+			MainActivity.getInstance().sendBroadcast(intent);
+		}catch (NullPointerException e){
+			Log.e(TAG, e.getMessage());
+		}
 	}
 
 	public static void parseCurrentTime(String currentTime) {

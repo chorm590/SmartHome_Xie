@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,7 +40,7 @@ public class ControlActivity extends Activity implements OnClickListener, OnSetT
 		position = intent.getIntExtra("position", 0);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setTitle(MainActivity.name[position]);
-//		getActionBar().setIcon(R.drawable.air_conditioner_icon);
+		getActionBar().setIcon(R.drawable.touming);
 		tb = (ToggleButton) findViewById(R.id.tb);
 		tvStartTime = (TextView) findViewById(R.id.tvStartTime);
 		tvEndTime = (TextView) findViewById(R.id.tvEndTime);
@@ -72,30 +71,21 @@ public class ControlActivity extends Activity implements OnClickListener, OnSetT
 	}
 	
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.control, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		switch(id){
-			case android.R.id.home:{
-				finishActivity();
-				return true;
-			}
-		}
-		return super.onOptionsItemSelected(item);
-	}
-	
-	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
 		if(keyCode == KeyEvent.KEYCODE_BACK){
 			finishActivity();
 			return true;
 		}
 		return super.onKeyUp(keyCode, event);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if(item.getItemId() == android.R.id.home){
+			finishActivity();
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	private void finishActivity(){
@@ -112,6 +102,7 @@ public class ControlActivity extends Activity implements OnClickListener, OnSetT
 		switch(v.getId()){
 			case R.id.tb:{
 				Log.d("mylog", "np value="+npMin.getValue());
+				InstructionFactory.which = position + 1;
 				InstructionFactory.isSwitchOn = tb.isChecked();
 				InstructionFactory.isSetTimeOn = cbSetTime.isChecked();
 				InstructionFactory.setTimeStartAfterMins = tvStartTime.getText().toString();

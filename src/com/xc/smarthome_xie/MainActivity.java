@@ -16,7 +16,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.DialogInterface.OnClickListener;
-import android.graphics.Color;
+import android.content.DialogInterface.OnDismissListener;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -52,17 +52,17 @@ public class MainActivity extends Activity implements OnItemClickListener{
 	public static final String[] name = {
 			"主卧灯",
 			"副卧灯",
-			"加湿器",
+			"热水器",
 			"空调",
 			"空气净化器"
 	};
 	
 	private int[] res = {
-			Color.BLACK,
-			Color.CYAN,
-			Color.BLUE,
-			Color.GREEN,
-			Color.RED
+			R.drawable.light_,
+			R.drawable.light_,
+			R.drawable.hotw__,
+			R.drawable.airc_,
+			R.drawable.airccc__
 	};
 
 	@Override
@@ -129,8 +129,8 @@ public class MainActivity extends Activity implements OnItemClickListener{
 		tvRightSub.setText(getResources().getString(R.string.nosie));
 		tvLeftUnit.setText(getResources().getString(R.string.tempreture_unit));
 		tvCenterUnit.setText(getResources().getString(R.string.pm2_5_unit));
-		tvCenterUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
 		tvRightUnit.setText(getResources().getString(R.string.nosie_uint));
+		tvRightUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
 		
 		// GridView功能列表初始化。
 		Entity entity = null;
@@ -145,19 +145,20 @@ public class MainActivity extends Activity implements OnItemClickListener{
 	
 	private void refresh(WatcherEntity entity){
 		tvLeftMain.setText(entity.getTempretrue());
-		tvCenterMain.setText(entity.getPm2_5());
-		tvRightMain.setText(entity.getNosie());
+		tvCenterMain.setText(entity.getNosie());
+		tvRightMain.setText(entity.getPm2_5());
 		float cen = Float.valueOf(entity.getPm2_5());
 		if(cen >=10.0f){
-			tvCenterMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
 		}else if(cen >= 100.0f){
-			tvCenterMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23);
+			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23);
 		}else{
-			tvCenterMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
+			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
 		}
 	}
 	
-	public void setIp(View viw){
+	public void setIp(final View viw){
+		viw.setSelected(true);
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		View view = LayoutInflater.from(this).inflate(R.layout.set_ip, null);
 		final EditText etIp = (EditText) view.findViewById(R.id.etSettingIP);
@@ -176,7 +177,15 @@ public class MainActivity extends Activity implements OnItemClickListener{
 		});
 		
 		builder.setNegativeButton("Cancel", null);
-		builder.create().show();
+		AlertDialog ad = builder.create();
+		ad.setOnDismissListener(new OnDismissListener() {
+			
+			@Override
+			public void onDismiss(DialogInterface dialog) {
+				viw.setSelected(false);
+			}
+		});
+		ad.show();
 	}
 	
 	@Override
@@ -229,3 +238,11 @@ public class MainActivity extends Activity implements OnItemClickListener{
 	} // inner class  --  end.
 
 }
+
+/*
+ 			下发的数据：111000901800101
+ 			解析：
+         1                1                 1                        0009                 0180               0                1                  01
+   哪一个设备   开或关     定时任务是否开启       多少分钟后开      多少分钟后关    是否重复    延时是否开     多少分钟后开
+ 
+ * */

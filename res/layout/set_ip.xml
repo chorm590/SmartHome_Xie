@@ -15,6 +15,7 @@
         
         <EditText 
         android:id="@+id/etSettingIP"
+        android:text="192.168.11.254"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
         
@@ -34,7 +35,7 @@
         android:id="@+id/etSettingPort"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="17173"/>
+        android:text="8080"/>
         
     </TableRow>
     

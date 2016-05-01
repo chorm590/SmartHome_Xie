@@ -16,8 +16,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textOn="ON"
-            android:textOff="OFF"/>
+            android:background="@drawable/selector_switch"
+            android:textOn=""
+            android:textOff=""/>
         
     </FrameLayout>
     
@@ -42,6 +43,8 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginLeft="30dp"
 	            android:layout_marginStart="30dp"
+	            android:drawableLeft="@drawable/set_time"
+	            android:drawableStart="@drawable/set_time"
 	            android:textColor="@android:color/holo_blue_light"
 	            android:textSize="22sp"
 	            android:text="@string/txt_set_time" />
@@ -52,6 +55,7 @@
 	                android:layout_marginStart="30dp"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
+	                android:button="@drawable/pictures_select_icon"
 	                android:text="@string/turn_on"/>
         </LinearLayout>
         
@@ -109,6 +113,7 @@
                 android:layout_marginRight="23dp"
                 android:layout_marginEnd="23dp"
                 android:layout_centerVertical="true"
+                android:button="@drawable/pictures_select_icon"
                 android:textSize="23sp"
                 android:text="@string/repeat" />
             
@@ -128,6 +133,8 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginLeft="30dp"
 	            android:layout_marginStart="30dp"
+	            android:drawableLeft="@drawable/delay"
+	        	android:drawableStart="@drawable/delay"
 	            android:textColor="@android:color/holo_blue_light"
 	            android:textSize="22sp"
 	            android:text="@string/txt_delay_time" />
@@ -138,6 +145,7 @@
 	            android:layout_marginStart="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:button="@drawable/pictures_select_icon"
                 android:text="@string/turn_on"/>
             
         </LinearLayout>

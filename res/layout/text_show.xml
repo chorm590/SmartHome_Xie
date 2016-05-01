@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white" >
+    android:background="@drawable/dark_blue_bg" >
     
     <ImageView 
         android:id="@+id/ivBg"
@@ -11,40 +11,43 @@
         android:contentDescription="@string/action_settings"/>
     
     <RelativeLayout 
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         
         <TextView 
-        android:id="@+id/tvMainInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/num"
-        android:textSize="50sp"/>
+	        android:id="@+id/tvMainInfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/num"
+	        android:textColor="@android:color/white"
+	        android:textSize="50sp"/>
     
-    <TextView 
-        android:id="@+id/tvUnit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/unit"
-        android:layout_alignTop="@id/tvMainInfo"
-        android:layout_toRightOf="@id/tvMainInfo"
-        android:layout_toEndOf="@id/tvMainInfo"
-        android:layout_marginLeft="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="9dp"
-        android:gravity="start"
-        android:textSize="17sp"/>
-    
-    <TextView 
-        android:id="@+id/tvSubInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvMainInfo"
-        android:layout_centerHorizontal="true"
-        android:text="@string/num"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="13sp"/>
+	    <TextView 
+	        android:id="@+id/tvUnit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/unit"
+	        android:layout_alignTop="@id/tvMainInfo"
+	        android:layout_toRightOf="@id/tvMainInfo"
+	        android:layout_toEndOf="@id/tvMainInfo"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginStart="5dp"
+	        android:layout_marginTop="9dp"
+	        android:gravity="start"
+	        android:textColor="@android:color/white"
+	        android:textSize="17sp"/>
+	    
+	    <TextView 
+	        android:id="@+id/tvSubInfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="60dp"
+	        android:text="@string/num"
+	        android:textColor="@android:color/white"
+	        android:textSize="13sp"/>
         
     </RelativeLayout>
     

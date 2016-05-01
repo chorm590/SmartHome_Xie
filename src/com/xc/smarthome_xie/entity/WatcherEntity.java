@@ -9,14 +9,14 @@ public class WatcherEntity implements Parcelable {
 
 	private String tempretrue;
 	private String pm2_5;
-	private String nosie;
+	private String humidy;
 	
 	private String[] list = new String[3];
 	
-	public WatcherEntity(String tempretrue, String pm2_5, String nosie) {
+	public WatcherEntity(String tempretrue, String humidy, String pm2_5) {
 		setTempretrue(tempretrue);
+		setNosie(humidy);
 		setPm2_5(pm2_5);
-		setNosie(nosie);
 	}
 	
 	public WatcherEntity(){}
@@ -24,8 +24,8 @@ public class WatcherEntity implements Parcelable {
 	public WatcherEntity(Parcel in){
 		in.readStringArray(list);
 		setTempretrue(list[0]);
-		setPm2_5(list[1]);
-		setNosie(list[2]);
+		setNosie(list[1]);
+		setPm2_5(list[2]);
 	}
 	
 	public String getTempretrue() {
@@ -38,14 +38,14 @@ public class WatcherEntity implements Parcelable {
 		return pm2_5;
 	}
 	public void setPm2_5(String pm2_5) {
-		DecimalFormat df = new DecimalFormat("0.00");
+		DecimalFormat df = new DecimalFormat("0.0");
 		this.pm2_5 = String.valueOf(df.format(Double.valueOf(pm2_5)));
 	}
 	public String getNosie() {
-		return nosie;
+		return humidy;
 	}
 	public void setNosie(String nosie) {
-		this.nosie = nosie;
+		this.humidy = nosie;
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class WatcherEntity implements Parcelable {
 	public void writeToParcel(Parcel dest, int flags) {
 		list[0] = tempretrue;
 		list[1] = pm2_5;
-		list[2] = nosie;
+		list[2] = humidy;
 		dest.writeStringArray(list);
 	}
 	
