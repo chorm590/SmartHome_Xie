@@ -19,6 +19,7 @@ public class Parse {
 		 
 		  数据示例：
 		  					23;0.79;68;
+		  					温度；PM2.5；湿度；
 		  
 		 * */
 		WatcherEntity entity = new WatcherEntity(split[0],split[1],split[2]);
