@@ -13,7 +13,7 @@
     <string name="tempreture_unit">℃</string>
     <string name="pm2_5_unit">%</string>
     <string name="nosie_uint">ug/㎥</string>
-    <string name="main_title">聪之家</string>
+    <string name="main_title">Smart Home</string>
     <string name="sub_title">Enjoy smart,enjoy life!</string>
     <string name="title_activity_control">ControlActivity</string>
     <string name="txt_set_time">定时任务</string>
@@ -30,6 +30,15 @@
     <string name="repeat">重复</string>
     <string name="hour">时</string>
     <string name="min">分</string>
+    <string name="ok">确         认</string>
     
+    <string name="txt_ip_address">IP地址：</string>
+    <string name="txt_server_ip">192.168.11.254</string>
+    <string name="txt_port">端口</string>
+    <string name="txt_server_port">8080</string>
+    
+    <string name="network_unavilable">当前网络不可用</string>
+    <string name="connect_failed">无法连接到家庭设备</string>
+    <string name="connect_success">成功连接至家庭设备</string>
 
 </resources>

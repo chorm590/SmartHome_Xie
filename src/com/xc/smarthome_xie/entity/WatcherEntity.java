@@ -56,8 +56,8 @@ public class WatcherEntity implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		list[0] = tempretrue;
-		list[1] = pm2_5;
-		list[2] = humidy;
+		list[1] = humidy;
+		list[2] = pm2_5;
 		dest.writeStringArray(list);
 	}
 	

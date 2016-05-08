@@ -90,30 +90,36 @@ public class ControlActivity extends Activity implements OnClickListener, OnSetT
 	
 	private void finishActivity(){
 		Intent data = new Intent();
-//		data.putExtra("instruction", InstructionFactory.getResult());
 		data.putExtra("test", "yongfa.yang");
 		setResult(Activity.RESULT_OK, data);
 		
 		finish();
+	}
+	
+	public void ok(View view){
+		sendData();
+	}
+	
+	private void sendData(){
+		InstructionFactory.which = position + 1;
+		InstructionFactory.isSwitchOn = tb.isChecked();
+		InstructionFactory.isSetTimeOn = cbSetTime.isChecked();
+		InstructionFactory.setTimeStartAfterMins = tvStartTime.getText().toString();
+		InstructionFactory.setTimeEndAfterMins = tvEndTime.getText().toString();
+		InstructionFactory.isSetTimeRepeat = cbRepeat.isChecked();
+		InstructionFactory.isDelayOn = cbDelay.isChecked();
+		InstructionFactory.delayAfterMins = npMin.getValue();
+		
+		String ins = InstructionFactory.getSettingInstruction();
+		Log.d("mylog", "fucking ins="+ins);
+		CusApplication.getInstance().getConnection().write(ins);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
 			case R.id.tb:{
-				Log.d("mylog", "np value="+npMin.getValue());
-				InstructionFactory.which = position + 1;
-				InstructionFactory.isSwitchOn = tb.isChecked();
-				InstructionFactory.isSetTimeOn = cbSetTime.isChecked();
-				InstructionFactory.setTimeStartAfterMins = tvStartTime.getText().toString();
-				InstructionFactory.setTimeEndAfterMins = tvEndTime.getText().toString();
-				InstructionFactory.isSetTimeRepeat = cbRepeat.isChecked();
-				InstructionFactory.isDelayOn = cbDelay.isChecked();
-				InstructionFactory.delayAfterMins = npMin.getValue();
 				
-				String ins = InstructionFactory.getSettingInstruction();
-				Log.d("mylog", "fucking ins="+ins);
-				CusApplication.getInstance().getConnection().write(ins);
 			}break;
 			case R.id.tvStartTime:{
 				Log.d("mylog", "Set start time.");

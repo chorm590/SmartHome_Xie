@@ -1,5 +1,6 @@
 package com.xc.smarthome_xie.tools;
 
+import com.xc.smarthome_xie.R;
 import com.xc.smarthome_xie.net.ConnectToServer;
 
 import android.app.ActivityManager;
@@ -12,6 +13,11 @@ import android.widget.Toast;
 public class CusApplication extends Application {
 	
 	private final String TAG = "CusApplication";
+	
+	public static final byte SINGLE_TOAST = 121;
+	public static final byte TOAST = 122;
+	public static final byte CONNECT_SUCCESS = 123;
+	public static final byte CONNECT_FAILED = 124;
 
 	private static CusApplication instance ;
 	
@@ -27,7 +33,6 @@ public class CusApplication extends Application {
 	}
 	
 	public void initConnection(){
-		Log.d(TAG, "init ConnectionToServer");
 		if(connection != null)
 			connection.close();
 		connection = new ConnectToServer();
@@ -56,7 +61,21 @@ public class CusApplication extends Application {
 	
 	public Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
-			showToast((String) msg.obj);
+			switch(msg.what){
+				case SINGLE_TOAST:{
+					handler.removeMessages(TOAST);
+					handler.sendEmptyMessageDelayed(TOAST, 1024);
+				}break;
+				case TOAST:{
+					showToast(getResources().getString(R.string.network_unavilable));
+				}break;
+				case CONNECT_FAILED:{
+					showToast(getResources().getString(R.string.connect_failed));
+				}break;
+				case CONNECT_SUCCESS:{
+					showToast(getResources().getString(R.string.connect_success));
+				}break;
+			}
 		};
 	};
 	

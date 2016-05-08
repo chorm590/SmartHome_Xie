@@ -9,7 +9,7 @@
     <FrameLayout 
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="3">
         
         <ToggleButton 
             android:id="@+id/tb"
@@ -26,7 +26,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="8"
         android:orientation="vertical" >
 
         <!-- 定时任务标题栏 -->
@@ -223,5 +223,16 @@
         </RelativeLayout>
         
     </LinearLayout>
+    
+    <!-- 确认按钮 -->
+    <Button 
+        android:id="@+id/btnOk"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/selector_btn"
+        android:textColor="@color/bg_holo_grey_txt"
+        android:onClick="ok"
+        android:text="@string/ok"/>
 
 </LinearLayout>

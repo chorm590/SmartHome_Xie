@@ -26,7 +26,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:gravity="center"
-	        android:textSize="47sp"
+	        android:textSize="31sp"
 	        android:textColor="@color/bg_holo_grey_txt"
 	        android:text="@string/main_title"/>
         

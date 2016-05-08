@@ -5,7 +5,6 @@ import java.net.Socket;
 
 import com.xc.smarthome_xie.tools.CusApplication;
 
-import android.os.Message;
 import android.util.Log;
 
 public class ConnectToServer {
@@ -29,14 +28,10 @@ public class ConnectToServer {
 					CusApplication.getInstance().isNetAvailable = true;
 					initReader();
 					initWriter();
-					Message msg = Message.obtain();
-					msg.obj = "成功连接家庭设备";
-					CusApplication.getInstance().handler.sendMessage(msg);
+					CusApplication.getInstance().handler.sendEmptyMessage(CusApplication.CONNECT_SUCCESS);
 				} catch (IOException e) {
 					Log.d(TAG, "connect failed."+e.getMessage());
-					Message msg = Message.obtain();
-					msg.obj = "无法连接家庭设备，请检查您的网络状况.";
-					CusApplication.getInstance().handler.sendMessage(msg);
+					CusApplication.getInstance().handler.sendEmptyMessage(CusApplication.CONNECT_FAILED);
 				}
 			};
 		}.start();
@@ -53,9 +48,7 @@ public class ConnectToServer {
 	
 	public void write(String instruction){
 		if(!isConnectionReady()){
-			Message msg = Message.obtain();
-			msg.obj = "当前网络不可用";
-			CusApplication.getInstance().handler.sendMessage(msg);
+			CusApplication.getInstance().handler.sendEmptyMessage(CusApplication.SINGLE_TOAST);
 			return;
 		}
 		writer.setInstruction(instruction);

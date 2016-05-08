@@ -24,23 +24,31 @@
             android:gravity="center"
             android:orientation="horizontal" >
             
-            <include 
-                android:id="@+id/viewLeft"
-                android:layout_weight="1"
-                android:layout_marginTop="1dp"
+            <LinearLayout 
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-            	layout="@layout/text_show"/>
-            
-            <include 
-                android:id="@+id/viewCenter"
                 android:layout_weight="1"
-                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
                 android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-            	layout="@layout/text_show"/>
+                android:layout_marginEnd="1dp"
+                android:orientation="vertical">
+                
+                <include 
+	                android:id="@+id/viewLeft"
+	                android:layout_weight="1"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	            	layout="@layout/text_show"/>
+            
+	            <include 
+	                android:id="@+id/viewCenter"
+	                android:layout_weight="1"
+	                android:layout_marginTop="1dp"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	            	layout="@layout/text_show"/>
+                
+            </LinearLayout>
             
             <include 
                 android:id="@+id/viewRight"
@@ -60,7 +68,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="5dp"
-        android:verticalSpacing="17dp"
         android:numColumns="3" />
 
 </LinearLayout>

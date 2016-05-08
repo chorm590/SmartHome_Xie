@@ -21,7 +21,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
@@ -36,7 +35,7 @@ public class MainActivity extends Activity implements OnItemClickListener{
 	
 	public final byte REFRESH_DATA = 1;
 	public static final byte ACTIVITY_REQUEST_CODE = 2;
-	public static final String BROADCAST_ACTION = "samsung";
+	public static final String BROADCAST_ACTION = "com.zhihu.www://https";
 	
 	private TextView tvLeftMain, tvLeftUnit, tvLeftSub;
 	private TextView tvCenterMain, tvCenterUnit, tvCenterSub;
@@ -130,7 +129,6 @@ public class MainActivity extends Activity implements OnItemClickListener{
 		tvLeftUnit.setText(getResources().getString(R.string.tempreture_unit));
 		tvCenterUnit.setText(getResources().getString(R.string.pm2_5_unit));
 		tvRightUnit.setText(getResources().getString(R.string.nosie_uint));
-		tvRightUnit.setTextSize(TypedValue.COMPLEX_UNIT_SP, 11);
 		
 		// GridView功能列表初始化。
 		Entity entity = null;
@@ -147,14 +145,6 @@ public class MainActivity extends Activity implements OnItemClickListener{
 		tvLeftMain.setText(entity.getTempretrue());
 		tvCenterMain.setText(entity.getNosie());
 		tvRightMain.setText(entity.getPm2_5());
-		float cen = Float.valueOf(entity.getPm2_5());
-		if(cen >=10.0f){
-			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
-		}else if(cen >= 100.0f){
-			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 23);
-		}else{
-			tvRightMain.setTextSize(TypedValue.COMPLEX_UNIT_SP, 50);
-		}
 	}
 	
 	public void setIp(final View viw){
@@ -200,12 +190,7 @@ public class MainActivity extends Activity implements OnItemClickListener{
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode == ACTIVITY_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-			Log.d("mylog", "test="+data.getStringExtra("test")+Activity.RESULT_CANCELED);
-			
-		} // if  --  end.
 	}
-
 	
 	public static MainActivity getInstance(){
 		return instance;

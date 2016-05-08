@@ -2,4 +2,6 @@
 <resources>
     <color name="bg_holo_grey">#ffe7e7e7</color>
     <color name="bg_holo_grey_txt">#fff3f3f3</color>
+    
+    <color name="btn_unclick_orange">#fff98c13</color>
 </resources>
